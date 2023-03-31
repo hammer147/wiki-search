@@ -16,9 +16,12 @@ export default async function getWikiResults(searchTerm: string) {
       origin: '*',
   })
 
+  // console.log('https://en.wikipedia.org/w/api.php?' + searchParams)
+
   const response = await fetch('https://en.wikipedia.org/w/api.php?' + searchParams)
   if (!response.ok) return undefined
   const data = await response.json()
+  // console.log(data)
   const result = searchResultSchema.safeParse(data)
   return result // Promise<{ success: true, data: SearchResult } | { success: false, error: ZodError }>
 }

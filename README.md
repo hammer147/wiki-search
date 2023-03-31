@@ -1,7 +1,3 @@
-todos:
+# WikiSearch
 
-types: better Page then Result?
-
-page in dynamic segment: why always search error?
-
-decode uri
+A demo to show how to consume an api in Next.js 13 with runtime type validation using zod.

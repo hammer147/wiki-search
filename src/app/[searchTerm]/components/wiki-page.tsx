@@ -1,9 +1,9 @@
-import { Result } from '@/types'
+import { Page } from '@/types'
 
 import Link from 'next/link'
 
 type Props = {
-  page: Result
+  page: Page
 }
 
 export default function WikiPage({ page }: Props) {

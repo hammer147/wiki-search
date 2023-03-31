@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
-export const resultSchema = z.object({
-  pageid: z.string(),
+export const pageSchema = z.object({
+  pageid: z.number(),
   title: z.string(),
   extract: z.string(),
   thumbnail: z
@@ -13,12 +13,12 @@ export const resultSchema = z.object({
     .optional()
 })
 
-export type Result = z.infer<typeof resultSchema>
+export type Page = z.infer<typeof pageSchema>
 
 export const searchResultSchema = z.object({
   query: z
     .object({
-      pages: z.array(resultSchema).optional()
+      pages: z.record(pageSchema).optional()
     })
     .optional()
 })
